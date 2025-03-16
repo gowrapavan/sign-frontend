@@ -24,7 +24,7 @@ const UploadForm = () => {
         const formData = new FormData();
         formData.append("file", selectedFile);
 
-        fetch("http://127.0.0.1:5000/upload", {  // Ensure correct backend URL
+        fetch("https://sign-backend-j4dw.onrender.com/upload", {  // Ensure correct backend URL
             method: "POST",
             body: formData,
         })
@@ -35,7 +35,7 @@ const UploadForm = () => {
                 if (data.error) {
                     setError(data.error);
                 } else {
-                    setImageURL(`http://127.0.0.1:5000/output/${data.processed_image}`);
+                    setImageURL(`https://sign-backend-j4dw.onrender.com/output/${data.processed_image}`);
                 }
             })
             .catch((error) => {
